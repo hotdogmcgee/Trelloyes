@@ -7,10 +7,10 @@ function List(props) {
     return (
       <section className="List">
         <header className="List-header">
-          <h2>hi</h2>
+          <h2>{props.header}</h2>
         </header>
         <div className="List-cards">
-          <Card title="cardtitle" content="cardcontent" />
+          {props.cards}
         </div>
       </section>
     );
