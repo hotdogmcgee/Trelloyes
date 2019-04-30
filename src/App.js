@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
 import List from './List.js'
-import STORE from './store.js'
+// import STORE from './store.js'
 
-function App() {
-  console.log(STORE)
-  const cardTitle = STORE.allCards['a'].title;
+function App(props) {
+  console.log(props)
+  
   return (
     <main className="App">
       <header className="App-header">
         <h1>Trelloyes!</h1>
       </header>
       <div className="App-list">
-        <List header="" cards=""/>
+        <List header={props.lists[0].header} cards=""/>
         <List />
         <List />
         <List />
