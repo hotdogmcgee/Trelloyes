@@ -5,11 +5,11 @@ import './index.css';
 import STORE from './store.js';
 
 
-console.log('hi');
+
 
 ReactDOM.render(
-    <App>{STORE} 
-    </App>, document.getElementById('root')
+    <App />, 
+    document.getElementById('root')
     );
 
 

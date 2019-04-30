@@ -7,16 +7,18 @@ function List(props) {
     return (
       <section className="List">
         <header className="List-header">
-          <h2>{props.title}</h2>
+          <h2>hi</h2>
         </header>
         <div className="List-cards">
-          <Card title={props.title} content={props.content} />
+          <Card title="cardtitle" content="cardcontent" />
         </div>
       </section>
     );
   }
 
 export default List;
+
+// {props.lists[0].header}
 
 
 
