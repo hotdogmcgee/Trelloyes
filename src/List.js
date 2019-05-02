@@ -1,6 +1,6 @@
 import React from 'react';
-import Card from './Card.js';
 import './List.css';
+import Card from './Card.js'
 
 
 function List(props) {
@@ -10,7 +10,9 @@ function List(props) {
           <h2>{props.header}</h2>
         </header>
         <div className="List-cards">
-          {props.cards}
+          {props.cards.map((cardId) => {
+            return <Card title={props.allCards[cardId].title} content={props.allCards[cardId].content} />
+          })}
         </div>
       </section>
     );
@@ -22,3 +24,10 @@ export default List;
 
 
 
+{/* <div className='List-cards'>
+{props.cards.map((card) =>
+  <Card
+    key={card.id}
+    title={card.title}
+    content={card.content}
+  /> */}

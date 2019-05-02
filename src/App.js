@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
 import List from './List.js'
-import Card from './Card.js'
 
 function App(props) {
   console.log(props.store.lists)
-  const cardsArr = [<Card title="title" content="content" />, 2, 3]
   //create newCards array for each list to make as prop for List component?
   
   return (
@@ -14,10 +12,10 @@ function App(props) {
         <h1>Trelloyes!</h1>
       </header>
       <div className="App-list">
-        <List header={props.store.lists[0].header} cards={cardsArr} />
-        <List header={props.store.lists[1].header} cards={cardsArr[0]}/>
-        <List header={props.store.lists[2].header} cards={cardsArr[0]}/>
-        <List header={props.store.lists[3].header} cards={cardsArr[0]}/>
+        { props.store.lists.map((listItem, index) => {
+          return <List key={index} header={listItem.header} cards={listItem.cardIds} allCards={props.store.allCards} />
+        }       
+          )}
         
       </div>
     </main>
@@ -36,3 +34,6 @@ export default App;
 //Do I need to .map() that?  ^^^
 
 //const newCardArray = STORE.lists['a'].cardIds.map(_, i)
+
+
+
